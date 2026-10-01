@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+  <meta name="theme-color" content="#0b0d10" />
+  <title>XAU/USD PRO V1</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lightweight-charts@4.2.3/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+    <div><div class="brand">XAU/USD <span>PRO V1</span></div><div class="sub">LIVE GOLD MARKET</div></div>
+    <button id="settingsBtn" class="iconBtn" aria-label="Settings">⚙</button>
+    </header>
+
+    <main>
+      <section class="priceCard">
+        <div><div class="label">XAU/USD</div><div id="price" class="price">—</div></div>
+        <div class="quote"><div><small>CHANGE</small><b id="change">—</b></div><div><small>UPDATED</small><b id="updated">—</b></div></div>
+      </section>
+
+      <section class="toolbar">
+        <div id="timeframes" class="timeframes">
+          <button data-interval="1min">1m</button>
+          <button data-interval="5min">5m</button>
+          <button data-interval="15min">15m</button>
+          <button data-interval="1h">1H</button>
+          <button data-interval="4h">4H</button>
+          <button data-interval="1day">1D</button>
+        </div>
+        <button id="refreshBtn" class="refresh">↻</button>
+      </section>
+
+      <section class="chartCard">
+        <div id="chart"></div>
+        <div id="chartStatus" class="chartStatus">Enter your Twelve Data API key in ⚙ Settings.</div>
+      </section>
+
+      <section class="stats">
+        <div><span>OPEN</span><b id="open">—</b></div>
+        <div><span>HIGH</span><b id="high">—</b></div>
+        <div><span>LOW</span><b id="low">—</b></div>
+        <div><span>CLOSE</span><b id="close">—</b></div>
+      </section>
+
+      <section class="infoCard">
+        <div class="sectionTitle">V1 STATUS</div>
+        <div class="row"><span>Data source</span><b>Twelve Data</b></div>
+        <div class="row"><span>Symbol</span><b>XAU/USD</b></div>
+        <div class="row"><span>Auto refresh</span><b>30 sec</b></div>
+      </section>
+
+      <div class="note">V1 is a market-data/chart tool only. It does not provide guaranteed trading results.</div>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modalBox">
+      <div class="modalHead"><h2>Settings</h2><button id="closeModal">×</button></div>
+      <label>Twelve Data API Key</label>
+      <input id="apiKey" type="password" placeholder="Paste API key here" autocomplete="off" />
+      <label>Symbol</label>
+      <input id="symbol" value="XAU/USD" autocomplete="off" />
+      <div class="modalActions"><button id="saveSettings" class="primary">Save & Load</button><button id="clearKey">Clear Key</button></div>
+      <p class="small">For personal testing, the key is stored in this browser's local storage. Do not publish your API key in a public GitHub file.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name":"XAU/USD PRO V1",
+  "short_name":"XAU PRO",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#050607",
+  "theme_color":"#0b0d10",
+  "description":"XAU/USD live market price and candlestick chart."
+}
